@@ -1,104 +1,72 @@
-/* GENERAL RESET */
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
   font-family: 'Poppins', sans-serif;
+  color: white;
   background: url('your-background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: white;
-  scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
 }
 
-/* NAVIGATION */
-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 20px 0;
-  position: sticky;
+#particles-js {
+  position: fixed;
   top: 0;
-  z-index: 1000;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffdde1;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #f7c9da;
-}
-
-/* CONTAINER SECTIONS */
 .container {
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 60px 30px;
-  margin: 40px auto;
-  border-radius: 12px;
-  max-width: 800px;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-}
-
-.logo {
-  width: 100px;
-  margin-bottom: 20px;
+  padding-top: 100px;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  margin-bottom: 0.2em;
 }
 
-.subtitle {
+p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #f7c9da;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ffdde1;
-}
-
-.audio-section {
-  margin-bottom: 25px;
+  margin-bottom: 2em;
 }
 
 audio {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  outline: none;
+  display: block;
+  margin: 1em auto;
+  width: 250px;
 }
 
-a {
-  color: #f7c9da;
-  text-decoration: underline;
+.audio-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5em;
+}
+
+.mic-overlay {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+.mic-icon {
+  width: 70px;
+  height: auto;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
