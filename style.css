@@ -1,43 +1,75 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f9f9f9;
-    color: #333;
-  }
-  
-  header {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  h1 {
-    font-size: 2.5rem;
-  }
-  
-  .portfolio, .about, .contact {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  .gallery img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  }
-  
-  footer {
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f6f2;
+  color: #3e2d29;
+  line-height: 1.7;
+}
+
+a {
+  color: #6a3561;
+  text-decoration: none;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #fdeee4;
+}
+
+.logo {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.4em;
+  color: #6a3561;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2 {
+  color: #3e2d29;
+  border-bottom: 2px solid #e5ccc6;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.audio-samples {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.audio-card {
+  background-color: #f2e8e5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+
+audio {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact a {
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  background-color: #e5ccc6;
+  color: #3e2d29;
+}
