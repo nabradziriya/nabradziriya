@@ -2,33 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nabra Dziriya | Voice Over</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <img src="logo1.png" alt="Nabra Dziriya Logo" class="logo">
+  <!-- NAVIGATION BAR -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-text">Nabra Dziriya</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#prices">Prices</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="container">
+    <img src="logo1.png" alt="Logo" class="logo">
     <h1>Nabra Dziriya</h1>
     <p class="subtitle">🎙️ Voice Over Artist | Darja Storytelling</p>
+  </section>
 
+  <!-- PORTFOLIO / AUDIO EXAMPLES -->
+  <section id="portfolio" class="container">
+    <h2>🎧 Audio Samples</h2>
     <div class="audio-section">
-      <p>🎧 Example 1:</p>
+      <p>Example 1:</p>
       <audio controls>
         <source src="example1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
       </audio>
     </div>
-
     <div class="audio-section">
-      <p>🎧 Example 2:</p>
+      <p>Example 2:</p>
       <audio controls>
         <source src="example2.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
       </audio>
     </div>
-  </div>
+  </section>
+
+  <!-- PRICES SECTION -->
+  <section id="prices" class="container">
+    <h2>💰 Prices</h2>
+    <p>🎤 1-minute voice over: 1000 DA</p>
+    <p>🎧 Narration up to 5 minutes: 3500 DA</p>
+    <p>📦 Full storytelling package: 6000 DA</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="container">
+    <h2>📩 Contact</h2>
+    <p>Email: <a href=\"mailto:nabra@example.com\">nabra@example.com</a></p>
+    <p>Instagram: <a href=\"https://instagram.com/yourhandle\">@yourhandle</a></p>
+  </section>
 </body>
 </html>
