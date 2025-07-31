@@ -1,75 +1,193 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f6f2;
-  color: #3e2d29;
-  line-height: 1.7;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nabra Dziriya | Voice Over Artist</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg: #1e1b1e;
+      --text: #f4f1ec;
+      --accent: #c89aa6;
+      --muted: #7d6a75;
+      --highlight: #eccfc6;
+    }
 
-a {
-  color: #6a3561;
-  text-decoration: none;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.hero {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #fdeee4;
-}
+    body {
+      display: flex;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-.logo {
-  max-width: 200px;
-  margin-bottom: 10px;
-}
+    .sidebar {
+      width: 200px;
+      background-color: #141114;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
 
-.tagline {
-  font-size: 1.4em;
-  color: #6a3561;
-}
+    .logo {
+      font-size: 1.8em;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-section {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: auto;
-}
+    .sidebar ul {
+      list-style: none;
+    }
 
-h2 {
-  color: #3e2d29;
-  border-bottom: 2px solid #e5ccc6;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
+    .sidebar ul li {
+      margin: 15px 0;
+    }
 
-ul {
-  padding-left: 20px;
-}
+    .sidebar ul li a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.audio-samples {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+    main {
+      margin-left: 220px;
+      padding: 40px 20px;
+      width: 100%;
+    }
 
-.audio-card {
-  background-color: #f2e8e5;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
-}
+    .section {
+      margin-bottom: 60px;
+      max-width: 800px;
+    }
 
-audio {
-  width: 100%;
-  margin-top: 10px;
-}
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      text-align: center;
+      background-color: #2a242d;
+      border-radius: 12px;
+    }
 
-.contact a {
-  font-weight: bold;
-}
+    .main-logo {
+      max-width: 180px;
+      margin-bottom: 20px;
+    }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  background-color: #e5ccc6;
-  color: #3e2d29;
-}
+    h1, h2, h4 {
+      color: var(--highlight);
+      margin-bottom: 10px;
+    }
+
+    p, li, a {
+      color: var(--text);
+    }
+
+    ul.service-list {
+      padding-left: 20px;
+    }
+
+    .audio-card {
+      background-color: #2e2a2f;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+      main {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2 class="logo">Nabra</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#samples">Samples</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="section hero">
+      <img src="logo1.png" alt="Nabra Dziriya Logo" class="main-logo">
+      <h1>Voice that brings stories to life</h1>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>I’m <strong>Nabra Dziriya</strong>, a voice-over artist with a warm, expressive tone perfect for storytelling, Reels, TikToks, and brand promos. I specialize in Algerian Darja voiceovers that feel real, natural, and emotional.</p>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Services</h2>
+      <ul class="service-list">
+        <li>🎤 Short-form video voice-overs (Reels, TikTok, YouTube Shorts)</li>
+        <li>📚 Storytelling in Darja (narrative and scripted)</li>
+        <li>📢 Ads & promotional voice-overs (product launches, personal brands)</li>
+      </ul>
+    </section>
+
+    <section id="samples" class="section">
+      <h2>Voice Samples</h2>
+      <div class="audio-card">
+        <h4>🎧 Ad Sample</h4>
+        <audio controls>
+          <source src="example1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="audio-card">
+        <h4>📖 Storytelling Sample</h4>
+        <audio controls>
+          <source src="example2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:nabradziriya@gmail.com">nabradziriya@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/nabradziriya" target="_blank">@nabradziriya</a></p>
+    </section>
+  </main>
+</body>
+</html>
