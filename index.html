@@ -3,78 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nabra Dziriya - Voice Over</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <title>Nabra Dziriya | Voice-Over</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <div class="background-overlay"></div>
   <div id="particles-js"></div>
+  <div class="bg-image"></div>
 
   <header>
-    <img src="logo1.png" alt="Logo" class="logo" />
+    <img src="logo1.png" class="logo" alt="Nabra Dziriya Logo" />
     <nav>
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#prices">Prices</a>
+      <a href="#pricing">Prices</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="section blur-box">
-      <h1>🎙️ Voice-over in Arabic, Darja & French.</h1>
-      <p>Warm, clear, and professional delivery for ads, videos & more.<br>Let your brand speak with impact.</p>
-    </section>
+  <section id="home" class="section">
+    <div class="blur-box">
+      <h2>🎙️ Voice-over in Arabic, Darja & French</h2>
+      <p>Warm, clear, and professional delivery for ads, videos & more.<br>
+      Let your brand speak with impact.</p>
+    </div>
+  </section>
 
-    <section id="portfolio" class="section blur-box">
+  <section id="portfolio" class="section">
+    <div class="blur-box">
       <h2>🎧 Portfolio</h2>
       <p>Example 1:</p>
-      <audio controls src="example1.mp3"></audio>
+      <audio controls>
+        <source src="example1.mp3" type="audio/mpeg" />
+      </audio>
+
       <p>Example 2:</p>
-      <audio controls src="example2.mp3"></audio>
-    </section>
+      <audio controls>
+        <source src="example2.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+  </section>
 
-    <section id="prices" class="section blur-box">
+  <section id="pricing" class="section">
+    <div class="blur-box">
       <h2>💰 Pricing</h2>
+      <p>🎙️ Voice-over Services:</p>
       <ul>
-        <li>▫️ Up to 30 sec — 1000 DA</li>
-        <li>▫️ Up to 60 sec — 1500 DA</li>
+        <li>▫️ Up to 30 sec — 1000 DA
+          <button onclick="copyText('0555555555')">📋 Copy</button>
+          <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+        </li>
+        <li>▫️ Up to 60 sec — 1500 DA
+          <button onclick="copyText('0555555555')">📋 Copy</button>
+          <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+        </li>
       </ul>
-      <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
-    </section>
+      <p>📩 For agencies or long-term projects: Special pricing available.</p>
+    </div>
+  </section>
 
-    <section id="contact" class="section blur-box">
+  <section id="contact" class="section">
+    <div class="blur-box">
       <h2>📞 Contact</h2>
-      <p>Phone: 0555555555 
-        <button onclick="navigator.clipboard.writeText('0555555555')">Copy</button>
-        <a href="https://wa.me/213555555555" target="_blank"><button>WhatsApp</button></a>
+      <p>📱 WhatsApp: 0555555555 
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
       </p>
-      <p>Email: nabradziriya@gmail.com</p>
-      <p>Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
-    </section>
-  </main>
+      <p>📧 Email: nabradziriya@gmail.com</p>
+      <p>📷 Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
+    </div>
+  </section>
 
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 80 },
-        size: { value: 3, random: true },
-        opacity: { value: 0.3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.2,
-          width: 1
-        },
-        move: { enable: true, speed: 2 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      }
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert('Copied: ' + text);
+    }
+
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('particles.js config loaded');
     });
   </script>
 </body>
