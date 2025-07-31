@@ -10,8 +10,10 @@
 </head>
 <body>
   <div id="particles-js"></div>
+  <div class="background-overlay"></div>
 
   <nav>
+    <img src="logo1.png" alt="Logo" class="logo" />
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
@@ -20,7 +22,7 @@
     </ul>
   </nav>
 
-  <div class="container">
+  <div class="container glass">
     <section id="home">
       <h1>🎙️ Voice-over in Arabic, Darja & French.</h1>
       <p>Warm, clear, and professional delivery for ads, videos & more.<br>Let your brand speak with impact.</p>
@@ -58,7 +60,7 @@
 
   <script>
     particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json');
-    
+
     function copyPhone() {
       const text = document.getElementById("phone").textContent;
       navigator.clipboard.writeText(text);
