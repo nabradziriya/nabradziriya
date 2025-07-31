@@ -1,72 +1,53 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  background: url('your-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
-  height: 100vh;
-  position: relative;
-}
-
-#particles-js {
+/* Navbar styles */
+header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 0;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 3;
 }
 
-.container {
+header .logo {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffb3c1;
+}
+
+/* Section styling */
+.section {
   position: relative;
   z-index: 1;
+  padding: 100px 20px;
   text-align: center;
-  padding-top: 100px;
+  background: rgba(0,0,0,0.3);
+  margin-top: 50px;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.2em;
-}
-
-p {
-  font-size: 1.2rem;
-  margin-bottom: 2em;
-}
-
-audio {
-  display: block;
-  margin: 1em auto;
-  width: 250px;
-}
-
-.audio-section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5em;
-}
-
-.mic-overlay {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  animation: float 4s ease-in-out infinite;
-}
-
-.mic-icon {
-  width: 70px;
-  height: auto;
-  opacity: 0.9;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
-  }
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
