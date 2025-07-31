@@ -1,3 +1,4 @@
+/* GENERAL RESET */
 * {
   margin: 0;
   padding: 0;
@@ -6,23 +7,62 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
   background: url('your-background.jpg') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  scroll-behavior: smooth;
 }
 
+/* NAVIGATION */
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffdde1;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f7c9da;
+}
+
+/* CONTAINER SECTIONS */
 .container {
   background-color: rgba(0, 0, 0, 0.65);
-  padding: 40px;
-  border-radius: 15px;
+  padding: 60px 30px;
+  margin: 40px auto;
+  border-radius: 12px;
+  max-width: 800px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  max-width: 90%;
-  width: 500px;
 }
 
 .logo {
@@ -36,9 +76,15 @@ h1 {
 }
 
 .subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
   color: #f7c9da;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffdde1;
 }
 
 .audio-section {
@@ -48,6 +94,11 @@ h1 {
 audio {
   width: 100%;
   max-width: 300px;
+  border-radius: 8px;
   outline: none;
-  border-radius: 10px;
+}
+
+a {
+  color: #f7c9da;
+  text-decoration: underline;
 }
