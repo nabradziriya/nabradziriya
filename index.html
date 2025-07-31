@@ -3,80 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nabra Dziriya - Voice Over</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <title>Nabra Dziriya | Voice-over</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 <body>
-
-  <!-- Particles Background -->
   <div id="particles-js"></div>
 
-  <!-- Navbar -->
-  <header>
-    <div class="logo">🎙️ Nabra Dziriya</div>
-    <nav>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="home">
+      <h1>🎙️ Voice-over in Arabic, Darja & French.</h1>
+      <p>Warm, clear, and professional delivery for ads, videos & more.<br>Let your brand speak with impact.</p>
+    </section>
+
+    <section id="portfolio" class="audio-section">
+      <h2>🎧 Portfolio</h2>
+      <audio controls src="example1.mp3"></audio>
+      <audio controls src="example2.mp3"></audio>
+    </section>
+
+    <section id="prices">
+      <h2>💰 Pricing</h2>
+      <p><strong>🎙️ Voice-over Services:</strong></p>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#prices">Prices</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>▫️ Up to 30 sec — 1000 DA</li>
+        <li>▫️ Up to 60 sec — 1500 DA</li>
       </ul>
-    </nav>
-  </header>
+      <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
+    </section>
 
-  <!-- Main Section -->
-  <section class="container" id="home">
-    <h1>Nabra Dziriya</h1>
-    <p>Voice Over Artist</p>
-    <div class="audio-section" id="portfolio">
-      <h2>🎧 Voice Samples</h2>
-      <audio controls>
-        <source src="example1.mp3" type="audio/mp3">
-      </audio>
-      <audio controls>
-        <source src="example2.mp3" type="audio/mp3">
-      </audio>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>📞 Contact</h2>
+      <p>📱 WhatsApp: 0555555555</p>
+      <p>📧 Email: <a href="mailto:nabradziriya@gmail.com">nabradziriya@gmail.com</a></p>
+      <p>📸 Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
+    </section>
+  </div>
 
-  <!-- Prices Section -->
-  <section class="section" id="prices">
-    <h2>💰 Prices</h2>
-    <p>Basic Voice Over: $50<br>Commercial Use: +$30<br>Delivery: within 24 hours</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <h2>📩 Contact</h2>
-    <p>Email: nabra@example.com<br>Instagram: @nabra.dziriya</p>
-  </section>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 50 },
-        size: { value: 3 },
-        color: { value: "#ffffff" },
-        opacity: {
-          value: 0.2,
-          random: true
-        },
-        move: {
-          enable: true,
-          speed: 0.6
-        },
-        line_linked: { enable: false }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: false },
-          onclick: { enable: false }
-        }
-      }
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json', function () {
+      console.log('particles.js loaded');
     });
   </script>
-
 </body>
 </html>
