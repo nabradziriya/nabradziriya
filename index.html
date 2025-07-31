@@ -21,36 +21,17 @@
   </nav>
 
   <div class="container">
-    <!-- Home Section -->
     <section id="home">
       <h1>🎙️ Voice-over in Arabic, Darja & French.</h1>
       <p>Warm, clear, and professional delivery for ads, videos & more.<br>Let your brand speak with impact.</p>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="audio-section">
+    <section id="portfolio">
       <h2>🎧 Portfolio</h2>
-
-      <div class="audio-block">
-        <h3>Example 1</h3>
-        <audio controls src="example1.mp3"></audio>
-        <div class="btn-group">
-          <button onclick="copyMessage('Hello Nabra, I want a voice-over like example 1')">Copy Text</button>
-          <a href="https://wa.me/213555555555?text=Hello%20Nabra%2C%20I%20want%20a%20voice-over%20like%20example%201" target="_blank">Contact via WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="audio-block">
-        <h3>Example 2</h3>
-        <audio controls src="example2.mp3"></audio>
-        <div class="btn-group">
-          <button onclick="copyMessage('Hello Nabra, I want a voice-over like example 2')">Copy Text</button>
-          <a href="https://wa.me/213555555555?text=Hello%20Nabra%2C%20I%20want%20a%20voice-over%20like%20example%202" target="_blank">Contact via WhatsApp</a>
-        </div>
-      </div>
+      <audio controls src="example1.mp3"></audio>
+      <audio controls src="example2.mp3"></audio>
     </section>
 
-    <!-- Prices Section -->
     <section id="prices">
       <h2>💰 Pricing</h2>
       <p><strong>🎙️ Voice-over Services:</strong></p>
@@ -61,24 +42,28 @@
       <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
       <h2>📞 Contact</h2>
-      <p>📱 WhatsApp: <a href="https://wa.me/213555555555" target="_blank">0555555555</a></p>
+      <p>
+        📱 WhatsApp: <span id="phone">0555555555</span>
+        <button onclick="copyPhone()">Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank">
+          <button>WhatsApp</button>
+        </a>
+      </p>
       <p>📧 Email: <a href="mailto:nabradziriya@gmail.com">nabradziriya@gmail.com</a></p>
       <p>📸 Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
     </section>
   </div>
 
   <script>
-    function copyMessage(text) {
+    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json');
+    
+    function copyPhone() {
+      const text = document.getElementById("phone").textContent;
       navigator.clipboard.writeText(text);
-      alert("Message copied ✅");
+      alert("Phone number copied!");
     }
-
-    particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json', function () {
-      console.log('particles.js loaded');
-    });
   </script>
 </body>
 </html>
