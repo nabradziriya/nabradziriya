@@ -16,22 +16,33 @@ body {
 }
 
 .container {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.65);
   padding: 40px;
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  max-width: 90%;
+  width: 500px;
 }
 
-.intro h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
   color: #f7c9da;
+}
+
+.audio-section {
+  margin-bottom: 25px;
 }
 
 audio {
