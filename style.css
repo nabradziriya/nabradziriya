@@ -5,7 +5,7 @@ body, h2, p, ul, li, a, button {
   box-sizing: border-box;
 }
 
-/* Global styles */
+/* Global body settings */
 body {
   font-family: 'Segoe UI', sans-serif;
   color: white;
@@ -13,10 +13,9 @@ body {
   background-size: cover;
   position: relative;
   margin: 0;
-  padding: 0;
 }
 
-/* Overlay for blur effect */
+/* Background blur overlay */
 .background-overlay {
   position: fixed;
   top: 0;
@@ -27,7 +26,7 @@ body {
   z-index: 1;
 }
 
-/* Particles container */
+/* Particle animation */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -35,7 +34,7 @@ body {
   z-index: 2;
 }
 
-/* Header */
+/* Fixed header */
 header {
   position: fixed;
   top: 0;
@@ -59,10 +58,9 @@ nav a {
   font-weight: bold;
 }
 
-/* Section spacing */
+/* Sections (no min-height) */
 .section {
-  min-height: 100vh;
-  padding: 80px 20px 40px; /* top space for header */
+  padding: 120px 20px 80px; /* top space for header, bottom space for breathing */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +68,7 @@ nav a {
   z-index: 3;
 }
 
-/* Blur box */
+/* Transparent black box */
 .blur-box {
   background: rgba(0, 0, 0, 0.6);
   padding: 30px;
@@ -79,7 +77,7 @@ nav a {
   width: 100%;
 }
 
-/* List items and buttons */
+/* Portfolio items */
 ul {
   list-style: none;
 }
@@ -88,6 +86,7 @@ li {
   margin: 10px 0;
 }
 
+/* Buttons */
 button {
   margin-left: 10px;
   padding: 5px 10px;
@@ -99,5 +98,10 @@ button {
 }
 
 a button {
-  background: #25d366; /* WhatsApp green */
+  background: #25d366;
+}
+
+/* Pink headline on home */
+#home h2 {
+  color: #ff90c2; /* light pink */
 }
