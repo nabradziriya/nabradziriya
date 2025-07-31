@@ -1,3 +1,4 @@
+/* Reset and base style */
 * {
   margin: 0;
   padding: 0;
@@ -5,76 +6,45 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #111;
-  color: #fff;
-  line-height: 1.6;
-}
-
-.hero {
-  height: 100vh;
-  background-image: url('your-background.jpg'); /* replace with your real image */
+  background-image: url('your-background.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: white;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
+/* Dark transparent overlay */
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  color: #fff;
+/* Centered content */
+.content {
+  text-align: center;
+  max-width: 90%;
 }
 
-.hero h1 {
+h1 {
   font-size: 3rem;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.animated-text {
+p {
   font-size: 1.2rem;
-  color: #ff99a2;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.4; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
-}
-
-.content-section {
-  padding: 4rem 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-.audio-box {
-  margin: 2rem 0;
+  margin: 15px 0;
+  color: #f3c9dc;
 }
 
 audio {
-  width: 100%;
-}
-
-a {
-  color: #ff99a2;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  margin-top: 20px;
+  width: 250px;
+  outline: none;
 }
