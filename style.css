@@ -1,26 +1,16 @@
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background: #0d0d0d;
-  line-height: 1.6;
-  position: relative;
-  overflow-x: hidden;
-}
-a {
-  color: #ffc6b5;
-  text-decoration: none;
-}
-ul {
-  list-style: none;
 }
 
-/* Particles background */
+body, html {
+  height: 100%;
+  color: #fff;
+  background: #0d0d0d;
+}
+
 #particles-js {
   position: fixed;
   width: 100%;
@@ -28,108 +18,71 @@ ul {
   z-index: -1;
 }
 
-/* Navbar */
 nav {
   background: rgba(0, 0, 0, 0.6);
-  padding: 1rem 2rem;
-  text-align: center;
+  padding: 15px 30px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1;
 }
+
 nav ul {
   display: flex;
+  list-style: none;
   justify-content: center;
-  gap: 2rem;
+  gap: 30px;
 }
-nav li a {
+
+nav a {
   color: #fff;
-  font-weight: 500;
-  transition: 0.3s;
-}
-nav li a:hover {
-  color: #ffaeae;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-/* Sections */
+nav a:hover {
+  color: #ffb3c1;
+}
+
 .container {
-  max-width: 1000px;
+  padding: 80px 20px;
+  max-width: 900px;
   margin: auto;
-  padding: 5rem 2rem;
 }
+
 section {
-  margin-bottom: 5rem;
+  margin-bottom: 80px;
 }
-h1, h2, h3 {
-  color: #ffd6d6;
-  margin-bottom: 1rem;
+
+section h1, section h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffb3c1;
 }
-p, li {
+
+section p, li, a {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
-/* Audio section styling */
-.audio-section h2 {
-  margin-bottom: 2rem;
-}
-.audio-block {
-  background: #1b1b1b;
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px rgba(255, 182, 193, 0.1);
-}
-.audio-block h3 {
-  margin-bottom: 0.8rem;
-  color: #ffeaea;
-}
 audio {
+  display: block;
+  margin: 10px 0;
   width: 100%;
-  margin-bottom: 1rem;
 }
 
-/* Button Group */
-.btn-group {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.btn-group button,
-.btn-group a {
-  padding: 0.6rem 1rem;
-  background: #ffb5ab;
-  color: #1b1b1b;
+button {
+  margin-left: 10px;
+  background-color: #ffb3c1;
   border: none;
-  border-radius: 30px;
+  padding: 6px 12px;
   cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
-.btn-group a {
-  display: inline-block;
-  text-align: center;
-}
-.btn-group button:hover,
-.btn-group a:hover {
-  background: #ffd6d6;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-/* Prices & Contact */
-#prices ul {
-  margin-top: 1rem;
-}
-#contact p {
-  margin-bottom: 0.8rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .btn-group {
-    flex-direction: column;
-  }
+button:hover {
+  background-color: #fff;
+  color: #000;
 }
