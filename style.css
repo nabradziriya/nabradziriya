@@ -1,11 +1,12 @@
-/* Reset some default spacing */
+/* Reset */
+html { scroll-behavior: smooth; }
 body, h2, p, ul, li, a, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global body settings */
+/* Global */
 body {
   font-family: 'Segoe UI', sans-serif;
   color: white;
@@ -18,28 +19,24 @@ body {
 /* Background blur overlay */
 .background-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   backdrop-filter: blur(3px);
   z-index: 1;
 }
 
-/* Particle animation */
+/* Particles layer */
 #particles-js {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   z-index: 2;
 }
 
-/* Fixed header */
+/* Header */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0,0,0,0.5);
   padding: 10px 40px;
   z-index: 3;
   display: flex;
@@ -47,40 +44,31 @@ header {
   align-items: center;
 }
 
-/* Logo + site name */
+/* Site name (pink & bigger) */
 .site-name {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 30px;          /* a bit bigger */
+  font-weight: 800;
+  color: #ff90c2;           /* pink */
+  letter-spacing: 0.4px;
 }
 
-.logo {
-  height: 40px;
-}
-
-/* Navigation */
+/* Nav */
 nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 700;
+  transition: color .25s ease;
 }
+nav a:hover { color: #ff90c2; }
 
-nav a:hover {
-  color: #ff90c2; /* hover pink */
-}
-
-/* Sections (no min-height) */
+/* Sections */
 .section {
-  padding: 120px 20px 80px;
+  padding: 120px 20px 80px; /* top space for header */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,63 +76,65 @@ nav a:hover {
   z-index: 3;
 }
 
-/* Transparent black box */
+/* Card box */
 .blur-box {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   padding: 30px;
-  border-radius: 10px;
-  max-width: 600px;
+  border-radius: 12px;
+  max-width: 640px;
   width: 100%;
 }
 
-/* Portfolio items */
-ul {
-  list-style: none;
-}
+/* Typography */
+#home h2 { color: #ff90c2; }
 
-li {
-  margin: 10px 0;
+/* Lists */
+ul { list-style: none; }
+li { margin: 10px 0; }
+
+/* Audio full width */
+audio { width: 100%; margin-top: 6px; }
+
+/* Action buttons row */
+.actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 /* Buttons */
 button {
-  margin-left: 10px;
-  padding: 5px 10px;
+  padding: 6px 12px;
   cursor: pointer;
   border: none;
   background: #ffffff33;
   color: white;
-  border-radius: 4px;
-  transition: background 0.3s;
+  border-radius: 6px;
+  transition: background .25s ease, transform .08s ease-in-out;
 }
-
-button:hover {
-  background: #ffffff55;
-}
+button:hover { background: #ffffff55; }
+button:active { transform: scale(0.98); }
 
 a button {
   background: #25d366;
 }
-
 a button:hover {
   background: #1da851;
 }
 
-/* Pink headline on home */
-#home h2 {
-  color: #ff90c2;
-}
-
-/* Responsive (mobile) */
+/* Responsive */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
   }
-
   nav {
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 12px;
+  }
+  .blur-box {
+    padding: 22px;
   }
 }
