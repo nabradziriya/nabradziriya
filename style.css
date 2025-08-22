@@ -1,5 +1,7 @@
-/* Reset */
+/* Smooth scroll */
 html { scroll-behavior: smooth; }
+
+/* Reset */
 body, h2, p, ul, li, a, button {
   margin: 0;
   padding: 0;
@@ -13,30 +15,31 @@ body {
   background: url('your-background.jpg') no-repeat center center fixed;
   background-size: cover;
   position: relative;
-  margin: 0;
 }
 
-/* Background blur overlay */
+/* Background blur overlay (click-through) */
 .background-overlay {
   position: fixed;
   inset: 0;
   backdrop-filter: blur(3px);
   z-index: 1;
+  pointer-events: none; /* don't block clicks */
 }
 
-/* Particles layer */
+/* Particles layer (click-through) */
 #particles-js {
   position: fixed;
   inset: 0;
   z-index: 2;
+  pointer-events: none; /* don't block clicks */
 }
 
 /* Header */
 header {
   position: fixed;
-  top: 0;
+  top: 0; left: 0;
   width: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 40px;
   z-index: 3;
   display: flex;
@@ -44,48 +47,48 @@ header {
   align-items: center;
 }
 
-/* Site name (pink & bigger) */
+/* Site name: pink & bigger */
 .site-name {
-  font-size: 30px;          /* a bit bigger */
+  font-size: 30px;
   font-weight: 800;
-  color: #ff90c2;           /* pink */
+  color: #ff90c2;
   letter-spacing: 0.4px;
 }
 
-/* Nav */
+/* Navigation */
 nav {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
-  font-weight: 700;
-  transition: color .25s ease;
+  font-weight: bold;
+  transition: color 0.25s ease;
 }
 nav a:hover { color: #ff90c2; }
 
 /* Sections */
 .section {
-  padding: 120px 20px 80px; /* top space for header */
+  padding: 120px 20px 80px; /* space for fixed header */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 3;
+  z-index: 3; /* above particles */
 }
 
-/* Card box */
+/* Card */
 .blur-box {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   padding: 30px;
   border-radius: 12px;
   max-width: 640px;
   width: 100%;
 }
 
-/* Typography */
+/* Headline tint */
 #home h2 { color: #ff90c2; }
 
 /* Lists */
@@ -95,7 +98,7 @@ li { margin: 10px 0; }
 /* Audio full width */
 audio { width: 100%; margin-top: 6px; }
 
-/* Action buttons row */
+/* Actions row */
 .actions {
   margin-top: 8px;
   display: flex;
@@ -103,25 +106,25 @@ audio { width: 100%; margin-top: 6px; }
   align-items: center;
 }
 
-/* Buttons */
-button {
+/* Buttons (anchor + button share same look) */
+.btn, button {
+  display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
   border: none;
   background: #ffffff33;
   color: white;
   border-radius: 6px;
-  transition: background .25s ease, transform .08s ease-in-out;
+  transition: background 0.25s ease, transform 0.08s ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
 }
-button:hover { background: #ffffff55; }
-button:active { transform: scale(0.98); }
+button:hover, .btn:hover { background: #ffffff55; }
+button:active, .btn:active { transform: scale(0.98); }
 
-a button {
-  background: #25d366;
-}
-a button:hover {
-  background: #1da851;
-}
+/* WhatsApp style */
+.wa-btn { background: #25d366; }
+.wa-btn:hover { background: #1da851; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -134,7 +137,5 @@ a button:hover {
     flex-wrap: wrap;
     gap: 12px;
   }
-  .blur-box {
-    padding: 22px;
-  }
+  .blur-box { padding: 22px; }
 }
