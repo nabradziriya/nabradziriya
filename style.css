@@ -47,20 +47,40 @@ header {
   align-items: center;
 }
 
+/* Logo + site name */
+.site-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .logo {
   height: 40px;
 }
 
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 nav a {
   color: white;
-  margin-left: 20px;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ff90c2; /* hover pink */
 }
 
 /* Sections (no min-height) */
 .section {
-  padding: 120px 20px 80px; /* top space for header, bottom space for breathing */
+  padding: 120px 20px 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,13 +115,36 @@ button {
   background: #ffffff33;
   color: white;
   border-radius: 4px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ffffff55;
 }
 
 a button {
   background: #25d366;
 }
 
+a button:hover {
+  background: #1da851;
+}
+
 /* Pink headline on home */
 #home h2 {
-  color: #ff90c2; /* light pink */
+  color: #ff90c2;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
 }
