@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nabra Dziriya</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nabra Dziriya | Voice-Over Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
-  <!-- PARTICLES -->
+  <div class="background-overlay"></div>
   <div id="particles-js"></div>
 
   <!-- HEADER -->
@@ -22,66 +22,104 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <h1>🎙️ Nabra Dziriya</h1>
-    <p>Voice-over services with a modern and stylish presentation</p>
+  <!-- HOME -->
+  <section id="home" class="section">
+    <div class="blur-box">
+      <h2>🎙️ Voice-over in Arabic, Darja & French</h2>
+      <p>
+        🎶 Voix chaleureuse, claire et professionnelle pour vos publicités, vidéos et plus.<br>
+        Donnez de l’impact à votre marque.
+      </p>
+      <p dir="rtl" style="text-align:right;">
+        🎶 صوت دافئ، واضح واحترافي للإعلانات والفيديوهات وأكثر.<br>
+        خلّي صوت علامتك يبان ويأثر.
+      </p>
+    </div>
   </section>
 
   <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio">
-    <h2>🎧 البعض من محفضة اعمالنا</h2>
-    <div class="example">
+  <section id="portfolio" class="section">
+    <div class="blur-box">
+      <h2>🎧 البعض من محفضة اعمالنا</h2>
+
       <p>Example 1:</p>
       <audio controls>
-        <source src="example1.mp3" type="audio/mpeg">
+        <source src="example1.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
-      <button onclick="copyText('example1.mp3')">📋 Copy</button>
-      <a href="https://wa.me/213XXXXXXXXX" target="_blank">💬 WhatsApp</a>
-    </div>
+      <div class="actions">
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </div>
 
-    <div class="example">
-      <p>Example 2:</p>
+      <p style="margin-top:16px;">Example 2:</p>
       <audio controls>
-        <source src="example2.mp3" type="audio/mpeg">
+        <source src="example2.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
-      <button onclick="copyText('example2.mp3')">📋 Copy</button>
-      <a href="https://wa.me/213XXXXXXXXX" target="_blank">💬 WhatsApp</a>
-    </div>
+      <div class="actions">
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </div>
 
-    <div class="example">
-      <p>Example 3:</p>
+      <p style="margin-top:16px;">Example 3:</p>
       <audio controls>
-        <source src="example3.mp3" type="audio/mpeg">
+        <source src="example3.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
-      <button onclick="copyText('example3.mp3')">📋 Copy</button>
-      <a href="https://wa.me/213XXXXXXXXX" target="_blank">💬 WhatsApp</a>
+      <div class="actions">
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </div>
     </div>
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="pricing">
-    <h2>💰 Pricing</h2>
-    <p>Custom quotes depending on project length and style.</p>
+  <section id="pricing" class="section">
+    <div class="blur-box">
+      <h2>💰 Pricing</h2>
+      <p>🎙️ Voice-over Services:</p>
+      <ul>
+        <li>
+          ▫️ Up to 30 sec — 1000 DA
+          <button onclick="copyText('0555555555')">📋 Copy</button>
+          <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+        </li>
+        <li>
+          ▫️ Up to 60 sec — 1500 DA
+          <button onclick="copyText('0555555555')">📋 Copy</button>
+          <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+        </li>
+      </ul>
+      <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
+    </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>📞 Contact</h2>
-    <p>For collaborations & inquiries:</p>
-    <a href="mailto:your@email.com">✉️ your@email.com</a>
+  <section id="contact" class="section">
+    <div class="blur-box">
+      <h2>📞 Contact</h2>
+      <p>
+        📱 WhatsApp: 0555555555
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </p>
+      <p>📧 Email: <a href="mailto:nabradziriya@gmail.com">nabradziriya@gmail.com</a></p>
+      <p>📸 Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
+    </div>
   </section>
 
+  <!-- SCRIPT -->
   <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('particles.js config loaded');
-    });
-
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => {
         alert("Copied: " + text);
       });
     }
+
+    particlesJS.load('particles-js', 'particles.json', function () {
+      console.log('particles.js loaded');
+    });
   </script>
 </body>
 </html>
