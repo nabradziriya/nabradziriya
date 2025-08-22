@@ -6,78 +6,14 @@
   <title>Nabra Dziriya | Voice-Over Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;   /* ✅ centers items vertically */
-      padding: 15px 40px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      height: 70px;          /* ✅ fixed height so links stay aligned */
-    }
-
-    .site-title {
-      font-size: 22px;
-      font-weight: bold;
-      color: #ff8abf; /* light pink */
-    }
-
-    nav {
-      display: flex;
-      align-items: center;  /* ✅ makes sure links are vertically centered */
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-size: 16px;
-      transition: color 0.3s ease;
-      line-height: 70px;   /* ✅ aligns text inside header height */
-    }
-
-    nav a:hover {
-      color: #ff8abf;
-    }
-
-    .section {
-      min-height: 100vh;
-      padding: 100px 20px 60px; /* top padding avoids header overlap */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .blur-box {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px 30px;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      max-width: 700px;
-      text-align: center;
-    }
-
-    h2 {
-      margin-bottom: 15px;
-    }
-  </style>
 </head>
 <body>
+  <div class="background-overlay"></div>
   <div id="particles-js"></div>
 
+  <!-- HEADER -->
   <header>
-    <div class="site-title">Nabra Dziriya</div>
+    <div class="site-name">Nabra Dziriya</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
@@ -86,14 +22,22 @@
     </nav>
   </header>
 
+  <!-- HOME -->
   <section id="home" class="section">
     <div class="blur-box">
-      <h2 style="color:#ff8abf;">🎙️ Voice-over in Arabic, Darja & French</h2>
-      <p>Warm, clear, and professional delivery for ads, videos & more.<br>
-      Let your brand speak with impact.</p>
+      <h2 style="color: #ff99cc;">🎙️ Voice-over in Arabic, Darja & French</h2>
+      <p>
+        🎶 Voix chaleureuse, claire et professionnelle pour vos publicités, vidéos et plus.<br>
+        Donnez de l’impact à votre marque.
+      </p>
+      <p dir="rtl" style="text-align: right;">
+        🎶 صوت دافئ، واضح واحترافي للإعلانات والفيديوهات وأكثر.<br>
+        خلّي صوت علامتك يبان ويأثر.
+      </p>
     </div>
   </section>
 
+  <!-- PORTFOLIO -->
   <section id="portfolio" class="section">
     <div class="blur-box">
       <h2>🎧 Portfolio</h2>
@@ -102,25 +46,36 @@
         <source src="example1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      <div class="actions">
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </div>
 
       <p>Example 2:</p>
       <audio controls>
         <source src="example2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
+      <div class="actions">
+        <button onclick="copyText('0555555555')">📋 Copy</button>
+        <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
+      </div>
     </div>
   </section>
 
+  <!-- PRICING -->
   <section id="pricing" class="section">
     <div class="blur-box">
       <h2>💰 Pricing</h2>
       <p>🎙️ Voice-over Services:</p>
       <ul>
-        <li>▫️ Up to 30 sec — 1000 DA
+        <li>
+          ▫️ Up to 30 sec — 1000 DA
           <button onclick="copyText('0555555555')">📋 Copy</button>
           <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
         </li>
-        <li>▫️ Up to 60 sec — 1500 DA
+        <li>
+          ▫️ Up to 60 sec — 1500 DA
           <button onclick="copyText('0555555555')">📋 Copy</button>
           <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
         </li>
@@ -129,10 +84,12 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="blur-box">
       <h2>📞 Contact</h2>
-      <p>📱 WhatsApp: 0555555555
+      <p>
+        📱 WhatsApp: 0555555555
         <button onclick="copyText('0555555555')">📋 Copy</button>
         <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
       </p>
@@ -141,6 +98,7 @@
     </div>
   </section>
 
+  <!-- SCRIPT -->
   <script>
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => {
