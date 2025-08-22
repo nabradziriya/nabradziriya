@@ -1,18 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nabra Dziriya | Voice-Over Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    .site-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff8abf; /* light pink */
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff8abf;
+    }
+
+    .section {
+      min-height: 100vh;
+      padding: 100px 20px 60px; /* added top padding to avoid header overlap */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .blur-box {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      max-width: 700px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
-  <div class="background-overlay"></div>
   <div id="particles-js"></div>
 
   <header>
-    <img src="logo1.png" alt="Nabra Dziriya Logo" class="logo"/>
+    <div class="site-title">Nabra Dziriya</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
@@ -23,8 +81,8 @@
 
   <section id="home" class="section">
     <div class="blur-box">
-      <h2>🎙️ Voice-over in Arabic, Darja & French</h2>
-      <p>Warm, clear, and professional delivery for ads, videos & more.<br/>
+      <h2 style="color:#ff8abf;">🎙️ Voice-over in Arabic, Darja & French</h2>
+      <p>Warm, clear, and professional delivery for ads, videos & more.<br>
       Let your brand speak with impact.</p>
     </div>
   </section>
@@ -34,13 +92,13 @@
       <h2>🎧 Portfolio</h2>
       <p>Example 1:</p>
       <audio controls>
-        <source src="example1.mp3" type="audio/mpeg" />
+        <source src="example1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
 
       <p>Example 2:</p>
       <audio controls>
-        <source src="example2.mp3" type="audio/mpeg" />
+        <source src="example2.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
     </div>
@@ -60,7 +118,7 @@
           <a href="https://wa.me/213555555555" target="_blank"><button>💬 WhatsApp</button></a>
         </li>
       </ul>
-      <p>📩 For agencies or long-term projects:<br/>Special pricing & contracts available.</p>
+      <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
     </div>
   </section>
 
