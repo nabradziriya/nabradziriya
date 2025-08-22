@@ -1,141 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nabra Dziriya | Voice-Over Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nabra Dziriya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: #fff;
+      padding-top: 70px; /* prevent header overlap */
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 24px;
+      color: pink;
+      margin: 0;
+    }
+    nav a {
+      margin-left: 16px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover { color: #ffcc66; }
+    section { padding: 80px 20px; text-align: center; }
+    h2 { color: #ffcc66; margin-bottom: 20px; }
+    .example { margin: 20px auto; background: #222; padding: 20px; border-radius: 8px; max-width: 400px; }
+    button {
+      margin: 5px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .copy-btn { background: #ffcc66; }
+    .wa-btn { background: #25d366; color: #fff; }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      color: #aaa;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body>
-  <div class="background-overlay"></div>
-  <div id="particles-js"></div>
-
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
-    <div class="site-name">Nabra Dziriya</div>
+    <h1>Nabra Dziriya</h1>
     <nav>
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#pricing">Prices</a>
+      <a href="#prices">Prices</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HOME -->
-  <section id="home" class="section">
-    <div class="blur-box">
-      <h2>🎙️ Voice-over in Arabic, Darja & French</h2>
-      <p>
-        🎶 Voix chaleureuse, claire et professionnelle pour vos publicités, vidéos et plus.<br>
-        Donnez de l’impact à votre marque.
-      </p>
-      <p dir="rtl" style="text-align:right;">
-        🎶 صوت دافئ، واضح واحترافي للإعلانات والفيديوهات وأكثر.<br>
-        خلّي صوت علامتك يبان ويأثر.
-      </p>
-    </div>
+  <!-- Hero -->
+  <section id="home">
+    <h2>Welcome to Nabra Dziriya 🎤</h2>
+    <p>Modern & stylish Algerian voice-over services.</p>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="section">
-    <div class="blur-box">
-      <h2>🎧 البعض من محفضة اعمالنا</h2>
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>🎧 البعض من محفضة اعمالنا</h2>
 
+    <div class="example">
       <p>Example 1:</p>
       <audio controls>
-        <source src="example1.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-      <div class="actions">
-        <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-        <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-           data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-      </div>
+        <source src="example1.mp3" type="audio/mpeg">
+      </audio><br>
+      <button class="copy-btn" onclick="copyNumber()">📋 Copy</button>
+      <a class="wa-btn" href="https://wa.me/213540376239?text=السلام%20عليكم%20اريد%20طلب%20تعليق%20صوتي%20❤️" target="_blank">💬 WhatsApp</a>
+    </div>
 
-      <p style="margin-top:16px;">Example 2:</p>
+    <div class="example">
+      <p>Example 2:</p>
       <audio controls>
-        <source src="example2.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-      <div class="actions">
-        <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-        <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-           data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-      </div>
+        <source src="example2.mp3" type="audio/mpeg">
+      </audio><br>
+      <button class="copy-btn" onclick="copyNumber()">📋 Copy</button>
+      <a class="wa-btn" href="https://wa.me/213540376239?text=السلام%20عليكم%20اريد%20طلب%20تعليق%20صوتي%20❤️" target="_blank">💬 WhatsApp</a>
+    </div>
 
-      <p style="margin-top:16px;">Example 3:</p>
+    <div class="example">
+      <p>Example 3:</p>
       <audio controls>
-        <source src="example3.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
-      <div class="actions">
-        <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-        <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-           data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-      </div>
+        <source src="example3.mp3" type="audio/mpeg">
+      </audio><br>
+      <button class="copy-btn" onclick="copyNumber()">📋 Copy</button>
+      <a class="wa-btn" href="https://wa.me/213540376239?text=السلام%20عليكم%20اريد%20طلب%20تعليق%20صوتي%20❤️" target="_blank">💬 WhatsApp</a>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="section">
-    <div class="blur-box">
-      <h2>💰 Pricing</h2>
-      <p>🎙️ Voice-over Services:</p>
-      <ul>
-        <li>
-          ▫️ Up to 30 sec — 1000 DA
-          <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-          <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-             data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-        </li>
-        <li>
-          ▫️ Up to 60 sec — 1500 DA
-          <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-          <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-             data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-        </li>
-      </ul>
-      <p>📩 For agencies or long-term projects:<br>Special pricing & contracts available.</p>
-    </div>
+  <!-- Prices -->
+  <section id="prices">
+    <h2>💰 Prices</h2>
+    <p>Custom voice-over starting from 2000 DA.</p>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="blur-box">
-      <h2>📞 Contact</h2>
-      <p>
-        📱 WhatsApp: +213540376239
-        <button class="btn" onclick="copyText('+213540376239')">📋 Copy</button>
-        <a class="btn wa-btn" href="https://wa.me/213540376239" target="_blank" rel="noopener"
-           data-msg="السلام عليكم اريد طلب تعليق صوتي ❤️">💬 WhatsApp</a>
-      </p>
-      <p>📧 Email: <a href="mailto:nabradziriya@gmail.com">nabradziriya@gmail.com</a></p>
-      <p>📸 Instagram: <a href="https://www.instagram.com/nabra.dziriya/" target="_blank">@nabra.dziriya</a></p>
-    </div>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>📞 Contact</h2>
+    <p>📱 WhatsApp: +213540376239</p>
+    <a class="wa-btn" href="https://wa.me/213540376239?text=السلام%20عليكم%20اريد%20طلب%20تعليق%20صوتي%20❤️" target="_blank">💬 Contact on WhatsApp</a>
   </section>
 
-  <!-- SCRIPT -->
+  <footer>
+    <p>© 2025 Nabra Dziriya - All Rights Reserved</p>
+  </footer>
+
   <script>
-    function copyText(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Copied: " + text);
-      });
+    // Copy WhatsApp number
+    function copyNumber() {
+      navigator.clipboard.writeText("+213540376239");
+      alert("WhatsApp number copied: +213540376239");
     }
 
-    // Ensure particles loads
-    particlesJS.load('particles-js', 'particles.json', function () {
-      console.log('particles.js loaded');
-    });
+    // Smooth scroll with offset fix
+    document.querySelectorAll('header nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+        const headerOffset = document.querySelector('header').offsetHeight;
+        const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
 
-    // Build WhatsApp links with proper encoding (Arabic + ❤️)
-    (function () {
-      var base = 'https://wa.me/213540376239';
-      document.querySelectorAll('.wa-btn').forEach(function (a) {
-        var msg = a.getAttribute('data-msg') || 'السلام عليكم اريد طلب تعليق صوتي ❤️';
-        a.href = base + '?text=' + encodeURIComponent(msg);
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
       });
-    })();
+    });
   </script>
 </body>
 </html>
