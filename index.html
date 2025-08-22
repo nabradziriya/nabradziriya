@@ -19,11 +19,12 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: center;   /* ✅ centers items vertically */
       padding: 15px 40px;
       background: rgba(0, 0, 0, 0.6);
       backdrop-filter: blur(8px);
       z-index: 1000;
+      height: 70px;          /* ✅ fixed height so links stay aligned */
     }
 
     .site-title {
@@ -32,12 +33,18 @@
       color: #ff8abf; /* light pink */
     }
 
+    nav {
+      display: flex;
+      align-items: center;  /* ✅ makes sure links are vertically centered */
+    }
+
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 20px;
       font-size: 16px;
       transition: color 0.3s ease;
+      line-height: 70px;   /* ✅ aligns text inside header height */
     }
 
     nav a:hover {
@@ -46,7 +53,7 @@
 
     .section {
       min-height: 100vh;
-      padding: 100px 20px 60px; /* added top padding to avoid header overlap */
+      padding: 100px 20px 60px; /* top padding avoids header overlap */
       display: flex;
       justify-content: center;
       align-items: center;
