@@ -11,40 +11,56 @@
       margin: 0;
       font-family: Arial, sans-serif;
       color: white;
+      background: #111;
+    }
+
+    .background-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('bg.jpg') no-repeat center center/cover;
+      z-index: -2;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
     }
 
     header {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
+      height: 70px;
       display: flex;
       justify-content: space-between;
-      align-items: center;   /* ✅ centers items vertically */
-      padding: 15px 40px;
-      background: rgba(0, 0, 0, 0.6);
+      align-items: center;      /* ✅ centers items vertically */
+      padding: 0 40px;
+      background: rgba(0,0,0,0.6);
       backdrop-filter: blur(8px);
       z-index: 1000;
-      height: 70px;          /* ✅ fixed height so links stay aligned */
     }
 
-    .site-title {
-      font-size: 22px;
+    .logo-text {
+      font-size: 20px;
       font-weight: bold;
-      color: #ff8abf; /* light pink */
+      color: #ff8abf;
     }
 
     nav {
       display: flex;
-      align-items: center;  /* ✅ makes sure links are vertically centered */
+      gap: 20px;
+      align-items: center;      /* ✅ centers links vertically */
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
       font-size: 16px;
       transition: color 0.3s ease;
-      line-height: 70px;   /* ✅ aligns text inside header height */
     }
 
     nav a:hover {
@@ -53,31 +69,48 @@
 
     .section {
       min-height: 100vh;
-      padding: 100px 20px 60px; /* top padding avoids header overlap */
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 100px 20px 50px; /* top padding so content not under header */
     }
 
     .blur-box {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 20px 30px;
+      background: rgba(0,0,0,0.6);
+      padding: 30px;
       border-radius: 12px;
-      backdrop-filter: blur(10px);
       max-width: 700px;
       text-align: center;
     }
 
-    h2 {
-      margin-bottom: 15px;
+    .highlight {
+      color: #ff8abf;  /* pink text */
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <div class="background-overlay"></div>
   <div id="particles-js"></div>
 
   <header>
-    <div class="site-title">Nabra Dziriya</div>
+    <div class="logo-text">Nabra Dziriya</div>
     <nav>
       <a href="#home">Home</a>
       <a href="#portfolio">Portfolio</a>
@@ -88,7 +121,7 @@
 
   <section id="home" class="section">
     <div class="blur-box">
-      <h2 style="color:#ff8abf;">🎙️ Voice-over in Arabic, Darja & French</h2>
+      <h2 class="highlight">🎙️ Voice-over in Arabic, Darja & French</h2>
       <p>Warm, clear, and professional delivery for ads, videos & more.<br>
       Let your brand speak with impact.</p>
     </div>
