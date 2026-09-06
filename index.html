@@ -2,95 +2,139 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sober Path</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f7f5">
+  <title>مساري | Sober Path</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div id="loading" class="loading"><div class="spinner"></div><p>جاري التحميل...</p></div>
+  <div id="loading" class="loading"><div class="loader-ring"></div><p>جاري تجهيز مسارك...</p></div>
 
   <section id="loginView" class="center-view hidden">
-    <div class="auth-card">
-      <div class="logo">SP</div>
-      <h1>Sober Path</h1>
-      <p>مسارك اليومي نحو حياة بدون إدمان</p>
-      <button id="googleLogin" class="google-btn">تسجيل الدخول باستخدام Google</button>
-      <small>بيانات التقدم خاصة بحسابك.</small>
+    <div class="login-shell">
+      <div class="login-copy">
+        <div class="brand-mark large">م</div>
+        <span class="login-kicker">SOBER PATH</span>
+        <h1>كل يوم فرصة<br><span>لبداية أفضل.</span></h1>
+        <p>مكان هادئ تتابع فيه مسارك، تتعلم، وتشوف تقدمك خطوة بخطوة.</p>
+      </div>
+      <div class="auth-card">
+        <div class="auth-top"><span>مرحباً بك</span><span class="dot"></span></div>
+        <h2>ابدأ مسارك</h2>
+        <p>سجّل الدخول لحفظ تقدمك ومتابعة دروسك.</p>
+        <button id="googleLogin" class="google-btn">
+          <span class="google-icon">G</span><span>المتابعة باستخدام Google</span><span class="arrow">←</span>
+        </button>
+        <small>تقدمك محفوظ بشكل خاص على حسابك.</small>
+      </div>
     </div>
   </section>
 
   <div id="appView" class="hidden">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">SP</span><span>Sober Path</span></div>
-      <div class="user-area">
-        <img id="userPhoto" class="avatar" alt="">
-        <span id="userName"></span>
-        <button id="logoutBtn" class="ghost-btn">خروج</button>
+      <a class="brand" href="#" aria-label="الرئيسية">
+        <span class="brand-mark">م</span>
+        <span><strong>مساري</strong><small>SOBER PATH</small></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="topHome" aria-label="الرئيسية">⌂</button>
+        <div class="user-area">
+          <img id="userPhoto" class="avatar" alt="">
+          <div class="user-copy"><strong id="userName"></strong><small>حسابك الشخصي</small></div>
+          <button id="logoutBtn" class="ghost-btn">خروج</button>
+        </div>
       </div>
     </header>
 
     <main class="container">
-      <section class="hero">
+      <section class="welcome-row">
         <div>
-          <span class="eyebrow">مسارك الشخصي</span>
-          <h2>ابقَ مركزًا على اليوم.</h2>
-          <p>تابع مدة الرصانة، وأنجز الدروس بالترتيب، وارجع للمحتوى متى احتجت.</p>
+          <span class="eyebrow">مساحتك الخاصة</span>
+          <h1>أهلاً، <span id="welcomeName">بك</span></h1>
+          <p>خلّ تركيزك على اليوم. خطوة صغيرة تكفي.</p>
         </div>
-        <div class="hero-stat"><span id="completedCount">0</span><small>من 364 درس</small></div>
+        <div class="date-pill" id="todayDate"></div>
       </section>
 
-      <nav class="tabs">
-        <button class="tab active" data-tab="dashboard">الرئيسية</button>
-        <button class="tab" data-tab="lessons">الدروس</button>
+      <section class="dashboard-grid">
+        <div class="main-column">
+          <article class="streak-card">
+            <div class="streak-top">
+              <div>
+                <span class="eyebrow light">رحلتك حتى الآن</span>
+                <h2>يوم وراء يوم.</h2>
+                <p>استمر بهدوء، وخلّ كل يوم يحسب.</p>
+              </div>
+              <div class="streak-badge">مسارك</div>
+            </div>
+            <div id="timer" class="timer">00 : 00 : 00 : 00</div>
+            <div class="timer-labels"><span>يوم</span><span>ساعة</span><span>دقيقة</span><span>ثانية</span></div>
+            <div class="streak-footer"><span id="soberSinceText">—</span><button id="resetTimer" class="reset-link">إعادة ضبط</button></div>
+          </article>
+
+          <section class="progress-section">
+            <div class="section-title">
+              <div><span class="eyebrow">التقدم</span><h2>أكمل من حيث توقفت</h2></div>
+              <button class="text-btn" data-tab="lessons">كل الدروس <span>←</span></button>
+            </div>
+            <article class="next-card" id="continueCard">
+              <div class="next-number"><span>الدرس</span><strong id="nextLesson">1</strong></div>
+              <div class="next-info"><span class="status-label">التالي في مسارك</span><h3 id="nextLessonTitle">جاري التحميل...</h3><p>شاهد المحتوى ثم علّم الدرس كمكتمل.</p></div>
+              <button class="primary-btn" id="continueBtn">ابدأ الدرس <span>←</span></button>
+            </article>
+          </section>
+        </div>
+
+        <aside class="side-column">
+          <article class="progress-card">
+            <div class="card-heading"><span>نسبة الإنجاز</span><span id="progressPercent">0%</span></div>
+            <div class="progress-ring" id="progressRing"><div><strong id="dashCompleted">0</strong><small>/ 364</small></div></div>
+            <p>درس مكتمل من برنامجك</p>
+          </article>
+          <article class="quote-card">
+            <span class="quote-mark">“</span>
+            <p>لا تحتاج أن ترى الطريق كله. يكفي أن تعرف خطوتك القادمة.</p>
+          </article>
+        </aside>
+      </section>
+
+      <nav class="tabs" aria-label="التنقل">
+        <button class="tab active" data-tab="dashboard"><span>⌂</span>الرئيسية</button>
+        <button class="tab" data-tab="lessons"><span>☷</span>الدروس</button>
       </nav>
 
-      <section id="dashboardTab" class="tab-content">
-        <div class="timer-card">
-          <div class="timer-head">
-            <div><span class="eyebrow">مدة الرصانة</span><h3>منذ آخر إعادة ضبط</h3></div>
-            <button id="resetTimer" class="danger-btn">إعادة ضبط المؤقت</button>
-          </div>
-          <div id="timer" class="timer">00 : 00 : 00 : 00</div>
-          <div class="timer-labels"><span>أيام</span><span>ساعات</span><span>دقائق</span><span>ثواني</span></div>
-          <p id="soberSinceText" class="muted"></p>
-        </div>
-
-        <div class="quick-grid">
-          <div class="stat-card"><span>الدروس المكتملة</span><strong id="dashCompleted">0</strong></div>
-          <div class="stat-card"><span>نسبة التقدم</span><strong id="progressPercent">0%</strong></div>
-          <div class="stat-card"><span>الدرس التالي</span><strong id="nextLesson">1</strong></div>
-        </div>
-      </section>
+      <section id="dashboardTab" class="tab-content"></section>
 
       <section id="lessonsTab" class="tab-content hidden">
-        <div class="section-head">
-          <div><span class="eyebrow">برنامج 364 درس</span><h3>الدروس</h3></div>
+        <div class="lessons-header">
+          <div><span class="eyebrow">برنامجك الكامل</span><h2>الدروس</h2><p>364 خطوة، خذها بالسرعة التي تناسبك.</p></div>
           <div class="filters">
-            <input id="searchInput" type="search" placeholder="ابحث عن درس...">
+            <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="ابحث عن درس..." aria-label="البحث عن درس"></label>
             <select id="phaseFilter"><option value="">كل المراحل</option></select>
           </div>
         </div>
-        <div id="lessonsList" class="lessons-list"></div>
+        <div class="lessons-list" id="lessonsList"></div>
       </section>
     </main>
+
+    <nav class="mobile-nav">
+      <button class="tab active" data-tab="dashboard"><span>⌂</span>الرئيسية</button>
+      <button class="tab" data-tab="lessons"><span>☷</span>الدروس</button>
+      <button id="mobileLogout"><span>↪</span>خروج</button>
+    </nav>
   </div>
 
   <div id="pdfModal" class="pdf-modal hidden" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
     <div class="pdf-modal-backdrop" data-action="close-pdf"></div>
     <div class="pdf-modal-card">
-      <div class="pdf-modal-head">
-        <h3 id="pdfModalTitle">PDF</h3>
-        <button id="closePdf" class="pdf-close" aria-label="إغلاق">×</button>
-      </div>
+      <div class="pdf-modal-head"><h3 id="pdfModalTitle">PDF</h3><button id="closePdf" class="pdf-close" aria-label="إغلاق">×</button></div>
       <iframe id="pdfFrame" title="PDF lesson" loading="lazy" allow="autoplay"></iframe>
     </div>
   </div>
-
   <div id="toast" class="toast"></div>
-
   <script type="module" src="./app.js"></script>
 </body>
 </html>
