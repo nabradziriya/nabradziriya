@@ -81,14 +81,22 @@ function subscribeProgress() {
 
 function renderStats() {
   const completed = lessons.filter(l => progress.get(l.id)?.completed).length;
-  const pct = Math.round((completed / lessons.length) * 100);
-  $("completedCount").textContent = completed;
+  const pct = lessons.length ? Math.round((completed / lessons.length) * 100) : 0;
+  $("completedCount")?.textContent = completed;
   $("dashCompleted").textContent = completed;
   $("progressPercent").textContent = pct + "%";
   const next = lessons.find(l => !progress.get(l.id)?.completed);
   $("nextLesson").textContent = next ? next.lessonNumber : "✓";
+  $("nextLessonTitle").textContent = next ? next.title : "أكملت جميع الدروس";
+  const ring = $("progressRing");
+  if (ring) ring.style.background = `conic-gradient(var(--accent) ${pct * 3.6}deg, #e9ece8 0deg)`;
+  const continueBtn = $("continueBtn");
+  if (continueBtn) {
+    continueBtn.disabled = !next;
+    continueBtn.dataset.lessonId = next?.id || "";
+    continueBtn.innerHTML = next ? 'ابدأ الدرس <span>←</span>' : 'اكتمل المسار';
+  }
 }
-
 function filteredLessons() {
   const search = $("searchInput").value.trim().toLowerCase();
   const phase = $("phaseFilter").value;
@@ -182,12 +190,7 @@ $("resetTimer").addEventListener("click", async () => {
   showToast("تمت إعادة ضبط المؤقت.");
 });
 
-document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
-  document.querySelectorAll(".tab").forEach(x => x.classList.remove("active"));
-  btn.classList.add("active");
-  document.querySelectorAll(".tab-content").forEach(x => x.classList.add("hidden"));
-  $(`${btn.dataset.tab}Tab`).classList.remove("hidden");
-}));
+
 
 $("searchInput").addEventListener("input", renderLessons);
 $("phaseFilter").addEventListener("change", renderLessons);
@@ -209,6 +212,27 @@ $("lessonsList").addEventListener("click", async (e) => {
   }
 });
 
+function setupInterface() {
+  const today = new Date();
+  $("todayDate").textContent = today.toLocaleDateString("ar-DZ", { weekday:"long", day:"numeric", month:"long" });
+  const continueBtn = $("continueBtn");
+  continueBtn?.addEventListener("click", () => {
+    const id = continueBtn.dataset.lessonId;
+    if (!id) return;
+    document.querySelector('[data-tab="lessons"]')?.click();
+    setTimeout(() => document.querySelector(`.lesson [data-id="${id}"]`)?.scrollIntoView({behavior:"smooth",block:"center"}), 100);
+  });
+  $("topHome")?.addEventListener("click", e => { e.preventDefault(); document.querySelector('.tab[data-tab="dashboard"]')?.click(); window.scrollTo({top:0,behavior:"smooth"}); });
+  $("mobileLogout")?.addEventListener("click", () => signOut(auth));
+  document.querySelectorAll(".tab").forEach(btn => btn.addEventListener("click", () => {
+    document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.tab === btn.dataset.tab));
+    document.querySelectorAll(".tab-content").forEach(x => x.classList.add("hidden"));
+    $(`${btn.dataset.tab}Tab`).classList.remove("hidden");
+    window.scrollTo({top:0,behavior:"smooth"});
+  }));
+}
+setupInterface();
+
 onAuthStateChanged(auth, async user => {
   loading.classList.add("hidden");
   if (!user) {
@@ -216,7 +240,7 @@ onAuthStateChanged(auth, async user => {
     loginView.classList.remove("hidden"); appView.classList.add("hidden"); return;
   }
   currentUser = user;
-  $("userName").textContent = user.displayName || user.email || "";
+  $("userName").textContent = user.displayName || user.email || ""; $("welcomeName").textContent = (user.displayName || "بك").split(" ")[0];
   $("userPhoto").src = user.photoURL || "";
   loginView.classList.add("hidden"); appView.classList.remove("hidden");
   try {
